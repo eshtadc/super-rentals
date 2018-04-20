@@ -36,12 +36,14 @@ module('Acceptance | list rentals', function(hooks) {
     await visit('/');
     await click(".menu-about");
     assert.equal(currentURL(), '/about', 'should navigate to about');
+    percySnapshot('about');
   });
 
   test('should link to contacts page', async function(assert) {
     await visit('/');
     await click(".menu-contact");
     assert.equal(currentURL(), '/contact', 'should navigate to contact');
+    percySnapshot('contact')
   });
 
   test('should list available rentals', async function(assert) {
@@ -55,6 +57,7 @@ module('Acceptance | list rentals', function(hooks) {
     await triggerKeyEvent('.list-filter input', 'keyup', 69);
     assert.ok(this.element.querySelector('.results .listing'), 'should display 1 listing');
     assert.ok(this.element.querySelector('.listing .location').textContent.includes('Seattle'), 'should contain 1 listing with location Seattle');
+    percySnapshot('search results');
   });
 
   test('should show details for a specific rental', async function(assert) {
@@ -63,5 +66,6 @@ module('Acceptance | list rentals', function(hooks) {
     assert.equal(currentURL(), '/rentals/grand-old-mansion', "should navigate to show route");
     assert.ok(this.element.querySelector('.show-listing h2').textContent.includes("Grand Old Mansion"), 'should list rental title');
     assert.ok(this.element.querySelector('.show-listing .description'), 'should list a description of the property');
+    percySnapshot('rentals details');
   });
 });
