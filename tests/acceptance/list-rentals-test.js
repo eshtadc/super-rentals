@@ -9,6 +9,7 @@ import {
   fillIn,
   triggerKeyEvent
 } from '@ember/test-helpers'
+import { percySnapshot } from 'ember-percy';
 
 let StubMapsService = Service.extend({
   getMapElement() {
@@ -27,6 +28,7 @@ module('Acceptance | list rentals', function(hooks) {
   test('should redirect to rentals route', async function(assert) {
     await visit('/');
     assert.equal(currentURL(), '/rentals', 'should redirect automatically');
+    percySnapshot(assert);
   });
 
 
