@@ -22,3 +22,8 @@ testem.log
 .node_modules.ember-try/
 bower.json.ember-try
 package.json.ember-try
+
+# backstopjs
+/backstop_data/bitmaps_test
+/backstop_data/ci_report
+/backstop_data/html_report

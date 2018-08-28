@@ -14,9 +14,13 @@
     "build": "ember build",
     "lint:js": "eslint ./*.js app config lib server tests",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test",
+    "backstop:test": "node_modules/backstopjs/cli/index.js test",
+    "backstop:report": "node_modules/backstopjs/cli/index.js openReport",
+    "backstop:approve": "node_modules/backstopjs/cli/index.js approve"
   },
   "devDependencies": {
+    "backstopjs": "^3.5.8",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.0.0",
