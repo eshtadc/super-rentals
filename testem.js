@@ -1,8 +1,14 @@
 module.exports = {
   test_page: 'tests/index.html?hidepassed',
   disable_watching: true,
+  launchers: {
+    "Backstop": {
+      "command": "backstop test"
+    }
+  },
   launch_in_ci: [
-    'Chrome'
+    'Chrome',
+    'Backstop'
   ],
   launch_in_dev: [
     'Chrome'
